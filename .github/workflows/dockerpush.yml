@@ -3,7 +3,7 @@ ame: Publish Docker image
 on:
   push:
     branches:
-      - master
+      - main
 
 jobs:
   push_to_registry:
