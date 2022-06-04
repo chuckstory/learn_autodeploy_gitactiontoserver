@@ -47,4 +47,4 @@ jobs:
           username: ${{ secrets.USERNAME }}
           password: ${{ secrets.PASSWORD }}
           port: ${{ secrets.PORT }}
-          script: whoami
+          script: bash ${{ secrets.BASH_PATH }}/update_docker.sh
