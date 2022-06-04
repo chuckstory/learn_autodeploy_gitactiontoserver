@@ -37,6 +37,7 @@ jobs:
 
   update_ssh_linux:
     name: Update Docker to Linux
+    needs: "push_to_registry"
     runs-on: ubuntu-latest
     steps:
       - name: executing remote ssh commands using password
