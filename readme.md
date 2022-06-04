@@ -23,3 +23,23 @@ auto deploy ให้เขียน scripts
 
 add permission to update_docker.sh
     run `chmod +x update_docker.sh`
+
+
+github action ส่วน deploy ให้ใช้ appleboy https://github.com/appleboy/ssh-action
+
+name: remote ssh command
+on: [push]
+jobs:
+
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+    - name: executing remote ssh commands using password
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.HOST }}
+        username: ${{ secrets.USERNAME }}
+        password: ${{ secrets.PASSWORD }}
+        port: ${{ secrets.PORT }}
+        script: whoami
